@@ -199,12 +199,14 @@ export function drawHalftone(ctx, W, H, color) {
   ctx.restore();
 }
 
-// Retro sun with rays, tucked into the top-right corner as a small sticker
-// so it never sits on a face in the middle of a panel.
+// Retro sun with rays, tucked into the sky of the left panel as a small
+// sticker: the right panel's top is usually a face (hat brim / forehead),
+// so the old top-right spot pressed the sun onto it. The left panel's sky
+// sits clear of the corner badge and of the faces in the sample photos.
 export function drawSunRays(ctx, W, H, grade) {
-  const cx = W * 0.9;
-  const cy = H * 0.1;
-  const r = Math.min(W, H) * 0.06;
+  const cx = W * 0.22;
+  const cy = H * 0.14;
+  const r = Math.min(W, H) * 0.045;
   ctx.save();
   ctx.globalAlpha = 0.9;
   const glow = ctx.createRadialGradient(cx, cy, r * 0.2, cx, cy, r * 2.2);
